@@ -2,6 +2,9 @@
 
 #hello
 
+# CONSTRAINT BEING CODED FIRST : TIME
+
+
 def BruteForce():
     pass
 
