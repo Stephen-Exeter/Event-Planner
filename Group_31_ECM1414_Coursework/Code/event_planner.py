@@ -20,5 +20,17 @@ import timeit
 # def DynamicAlgor():
 #     pass
 
+def Final_Output(input_file,):
+    print("""Event Planner results
+          
+            -Available time:
+            -Available budget:
+
+            --Brute Force ALgorithm--
+          
+            -Dynamic Programming Algorithm-
+          
+            """)
+
 print(timeit.timeit("Brute_Force()"))
 print(timeit.timeit("Dynamic_Programming()"))
