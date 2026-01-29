@@ -29,23 +29,36 @@ def read_file():
 
     # Opens the file
     input_file = open(chosen_input_file, 'r')
+    file_lines = input_file.readlines()
+    print(file_lines)
 
     # Reads the first 2 lines
-    line1 = input_file.readline()
-    line2 = input_file.readline()
+    line1 = (file_lines[0])[:-1]
+    line2 = (file_lines[1])[:-1]
 
     # Set needed variables
 
     no_of_events = int(line1)
     
     line2 = line2.split()
-    print(line2)
 
     max_hours = line2[0]
     max_budget = line2[1]
 
     print(no_of_events, max_hours, max_budget)
 
-    
+    # Create and add events to a dictionary
+
+    event_dict = {}
+
+    for a in range(2, no_of_events + 2):
+        current_line = (file_lines[a])[:-1]
+        current_line = current_line.split()
+
+        current_line[1:] = [ int(x) for x in current_line[1:] ]
+
+        event_dict[current_line[0]] = current_line[1:]
+
+    print(event_dict)
 
 read_file()
