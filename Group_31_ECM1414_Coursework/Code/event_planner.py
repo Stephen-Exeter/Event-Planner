@@ -27,11 +27,25 @@ def Final_Output(input_file,):
             -Available budget:
 
             --Brute Force ALgorithm--
-            ...
-            {timeit.timeit("Brute_Force()")}
+          
+            Selected Activities:
+                ...
+          
+            Total enjoyment:
+                ...
+          
+            Execution Time:
+                {timeit.timeit("Brute_Force()")}
 
 
             -Dynamic Programming Algorithm-
-            ...
-            {timeit.timeit("Dynamic_Programming()")}
+
+            Selected Activities:
+                ...
+
+            Total Enjoyment:
+                ...
+                
+            Execution Time:
+                {timeit.timeit("Dynamic_Programming()")}
             """)
