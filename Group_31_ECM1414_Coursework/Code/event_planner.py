@@ -9,6 +9,7 @@
 
 from brute_force import Brute_Force
 from dynamic_programming import Dynamic_Programming
+from take_input import read_file
 import timeit
 
 # def BruteForce(Constraint, InputData):
@@ -19,6 +20,9 @@ import timeit
 
 # def DynamicAlgor():
 #     pass
+
+#just runnning it here for testing
+Dynamic_Programming(*read_file())
 
 def Final_Output(input_file,):
     print(f"""Event Planner results
