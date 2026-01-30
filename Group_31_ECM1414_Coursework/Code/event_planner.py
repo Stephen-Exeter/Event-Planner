@@ -39,7 +39,7 @@ def Final_Output(input_file,):
                 ...
           
             Execution Time:
-                {timeit.timeit("Brute_Force()")}
+                {timeit.timeit("Brute_Force()","from __main__ import Brute_Force",number=10)/10} (average from 10 calls)
 
 
             -Dynamic Programming Algorithm-
@@ -51,5 +51,8 @@ def Final_Output(input_file,):
                 ...
                 
             Execution Time:
-                {timeit.timeit("Dynamic_Programming()")}
+                {timeit.timeit("Dynamic_Programming()","from __main__ import Dynamic_Programming",number=10)/10} (average from 10 calls)
             """)
+if __name__ == "__main__":
+    # Final_Output()
+    ...
