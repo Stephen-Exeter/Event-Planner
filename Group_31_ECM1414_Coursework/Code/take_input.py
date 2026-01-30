@@ -9,7 +9,8 @@
 #   a. Read line into a variable
 #   b. Split line into name, time_length, cost and happiness
 #   c. Save into the dictionary with the name as the key and time_length, cost and happiness as its values
-# 6. Return the 2 values and dictionary
+# 6. Return the 3 values and dictionary
+#   a. Order is in no_of_events, max_hours, max_budget and event_dict
 
 def read_file():
 
@@ -45,8 +46,6 @@ def read_file():
     max_hours = line2[0]
     max_budget = line2[1]
 
-    print(no_of_events, max_hours, max_budget)
-
     # Create and add events to a dictionary
 
     event_dict = {}
@@ -59,6 +58,4 @@ def read_file():
 
         event_dict[current_line[0]] = current_line[1:]
 
-    print(event_dict)
-
-read_file()
+    return(no_of_events, max_hours, max_budget, event_dict)
