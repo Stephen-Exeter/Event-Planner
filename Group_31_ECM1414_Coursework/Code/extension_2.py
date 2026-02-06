@@ -10,7 +10,8 @@ def brute_force_time():
   start = timeit.timeit()
   Brute_Force(read_file())
   end = timeit.timeit()
-  return end - start
+  no_of_events = read_file()[0]
+  return end - start, no_of_events
 
 
 # A function to find execution time for dynamic programming algorithm
@@ -19,14 +20,21 @@ def dynamic_programming_time():
   start = timeit.timeit()
   Dynamic_Programming(read_file())
   end = timeit.timeit()
-  return end - start
+  no_of_events = read_file()[0]
+  return end - start, no_of_events
 
 
 # A function which creates a line graph comparing the execution time of brute force vs. dynamic programming as n increases (time on y-axis, n on x-axis)
 
-def comparing_algorithms_line_graph():
-  pass
+def comparing_algorithms_line_graph(brute_force_time=brute_force_time()[0],
+                                    dynamic_programming_time=dynamic_programming_time()[0],
+                                    no_of_events=brute_force_time()[1]):
+  
+  plt.plot(no_of_events, brute_force_time)
+  plt.plot(no_of_events, dynamic_programming_time)
 
+  plt.savefig('graphs/line_graph.png')
+comparing_algorithms_line_graph([1, 4, 8], [2, 5, 7], [1, 2, 3])
 
 # A function which creates a bar chart showing the "speedup factor" (brute force time ÷ dynamic programming time) for each input size.
 
