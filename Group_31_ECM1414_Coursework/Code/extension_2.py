@@ -1,4 +1,5 @@
 import timeit
+import matplotlib.pyplot as plt
 from take_input import *
 from brute_force import *
 from dynamic_programming import *
