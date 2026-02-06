@@ -26,14 +26,14 @@ def dynamic_programming_time():
 
 # A function which creates a line graph comparing the execution time of brute force vs. dynamic programming as n increases (time on y-axis, n on x-axis)
 
-def comparing_algorithms_line_graph(brute_force_time=brute_force_time()[0],
-                                    dynamic_programming_time=dynamic_programming_time()[0],
-                                    no_of_events=brute_force_time()[1]):
+def comparing_algorithms_line_graph(brute_force_time,
+                                    dynamic_programming_time,
+                                    no_of_events):
   
   plt.plot(no_of_events, brute_force_time)
   plt.plot(no_of_events, dynamic_programming_time)
 
-  plt.savefig('graphs/line_graph.png')
+  plt.savefig('Group_31_ECM1414_Coursework/graphs/line_graph.png')
 comparing_algorithms_line_graph([1, 4, 8], [2, 5, 7], [1, 2, 3])
 
 # A function which creates a bar chart showing the "speedup factor" (brute force time ÷ dynamic programming time) for each input size.
