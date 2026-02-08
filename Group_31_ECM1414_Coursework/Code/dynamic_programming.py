@@ -11,7 +11,7 @@ def Dynamic_Programming(num_events:int ,max_hours:str ,max_budget:str ,event_dic
             print(hours_left)
             
             if table[hours_left][1] + enjoyment > table[hours][1]:
-                table[hours][0] = table[hours_left][0].append(name)
+                table[hours][0] = table[hours_left][0] + [name]
                 table[hours][1] = table[hours_left][1] + enjoyment
 
     print(table[int(max_hours)])
