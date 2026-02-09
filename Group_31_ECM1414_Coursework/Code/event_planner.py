@@ -22,7 +22,7 @@ import timeit
 #     pass
 
 #just runnning it here for testing
-Dynamic_Programming(*read_file())
+# Dynamic_Programming(*read_file())
 
 def Final_Output(input_file,):
     print(f"""Event Planner results
@@ -51,8 +51,8 @@ def Final_Output(input_file,):
                 ...
                 
             Execution Time:
-                {timeit.timeit("Dynamic_Programming()","from __main__ import Dynamic_Programming",number=10)/10} (average from 10 calls)
+                {timeit.timeit("Dynamic_Programming(*read_file())","from __main__ import Dynamic_Programming,read_file",number=10)/10} (average from 10 calls)
             """)
 if __name__ == "__main__":
-    # Final_Output()
-    ...
+    Final_Output("")
+    
