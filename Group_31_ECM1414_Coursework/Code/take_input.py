@@ -1,15 +1,14 @@
 
 # This is the function that allows us to accept the input from the text file, and splits it into the needed variables/arrays
 
-# 1. Set chosen input file from the 3 possible ones
-# 2. Take first 2 lines of the file, representing number of possible events, hours available and budget.
-# 3. Save these values into variables to be returned
-# 4. Create a dictionary for all the tasks 
-# 5. Loop through all the remaining lines and add them to a dictionary
+# 1. Take first 2 lines of the file, representing number of possible events, hours available and budget.
+# 2. Save these values into variables to be returned
+# 3. Create a dictionary for all the tasks 
+# 4. Loop through all the remaining lines and add them to a dictionary
 #   a. Read line into a variable
 #   b. Split line into name, time_length, cost and happiness
 #   c. Save into the dictionary with the name as the key and time_length, cost and happiness as its values
-# 6. Return the 3 values and dictionary
+# 5. Return the 3 values and dictionary
 #   a. Order is in no_of_events, max_hours, max_budget and event_dict
 
 def read_file(chosen_input_file):
