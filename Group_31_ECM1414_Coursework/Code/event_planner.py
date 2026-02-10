@@ -39,7 +39,7 @@ def Final_Output(input_file,):
                 ...
           
             Execution Time:
-                {timeit.timeit("Brute_Force(*read_file)",
+                {timeit.timeit("Brute_Force(*read_file())",
                                "from __main__ import Brute_Force,read_file",
                                number=10)/10} (average from 10 calls)
 
