@@ -25,18 +25,30 @@ import timeit
 # Dynamic_Programming(*read_file())
 
 def Final_Output(input_file,):
+    no_events,hours_max,budget_max,events = read_file() 
+    event_list_brute_force , enjoyment_brute_force , time_brute_force = Brute_Force(no_events,
+                                                                                    hours_max,
+                                                                                    budget_max,
+                                                                                    events)
+    event_list_dynamic , enjoyment_dynamic = Dynamic_Programming(no_events,
+                                                                hours_max,
+                                                                budget_max,
+                                                                events)
+
+
+
     print(f"""Event Planner results
           
-            -Available time:
-            -Available budget:
+            -Available time: {hours_max}
+            -Available budget: {budget_max}
 
             --Brute Force ALgorithm--
           
             Selected Activities:
-                ...
+                {event_list_brute_force}
           
             Total enjoyment:
-                ...
+                {enjoyment_brute_force}
           
             Execution Time:
                 {timeit.timeit("Brute_Force(*read_file())",
@@ -47,10 +59,10 @@ def Final_Output(input_file,):
             -Dynamic Programming Algorithm-
 
             Selected Activities:
-                ...
+                {event_list_dynamic}
 
             Total Enjoyment:
-                ...
+                {enjoyment_dynamic}
                 
             Execution Time:
                 {timeit.timeit("Dynamic_Programming(*read_file())",
