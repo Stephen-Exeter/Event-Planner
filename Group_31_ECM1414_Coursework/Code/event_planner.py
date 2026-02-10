@@ -24,8 +24,8 @@ import timeit
 #just runnning it here for testing
 # Dynamic_Programming(*read_file())
 
-def Final_Output(input_file,):
-    no_events,hours_max,budget_max,events = read_file() 
+def Final_Output(input_file):
+    no_events,hours_max,budget_max,events = read_file(input_file) 
     event_list_brute_force , enjoyment_brute_force , time_brute_force = Brute_Force(no_events,
                                                                                     hours_max,
                                                                                     budget_max,
@@ -51,7 +51,7 @@ def Final_Output(input_file,):
                 {enjoyment_brute_force}
           
             Execution Time:
-                {timeit.timeit("Brute_Force(*read_file())",
+                {timeit.timeit("Brute_Force(*read_file(input_file))",
                                "from __main__ import Brute_Force,read_file",
                                number=10)/10} (average from 10 calls)
 
@@ -65,10 +65,11 @@ def Final_Output(input_file,):
                 {enjoyment_dynamic}
                 
             Execution Time:
-                {timeit.timeit("Dynamic_Programming(*read_file())",
+                {timeit.timeit("Dynamic_Programming(*read_file(input_file))",
                                "from __main__ import Dynamic_Programming,read_file",
                                number=10)/10} (average from 10 calls)
             """)
 if __name__ == "__main__":
-    Final_Output("")
-    
+    Final_Output(r"Group_31_ECM1414_Coursework\Input_Files\input_small.txt")
+    Final_Output(r"Group_31_ECM1414_Coursework\Input_Files\input_medium.txt")
+    Final_Output(r"Group_31_ECM1414_Coursework\Input_Files\input_large.txt")
