@@ -12,21 +12,7 @@
 # 6. Return the 3 values and dictionary
 #   a. Order is in no_of_events, max_hours, max_budget and event_dict
 
-def read_file():
-
-    chosen_input_file = ''
-
-    # While loop for valid input for file choice
-    while chosen_input_file == '':
-        file_choice = input("Would you like to us the smalle [S], medium [M] or large [L] input file? : ")
-        if file_choice.upper() == 'S':
-            chosen_input_file = "Group_31_ECM1414_Coursework/Input_Files/input_small.txt"
-        elif file_choice.upper() == 'M':
-            chosen_input_file = "Group_31_ECM1414_Coursework/Input_Files/input_medium.txt"
-        elif file_choice.upper() == 'L':
-            chosen_input_file = "Group_31_ECM1414_Coursework/Input_Files/input_large.txt"
-        else :
-            print("Not chosen a valid file to open")
+def read_file(chosen_input_file):
 
     # Opens the file
     input_file = open(chosen_input_file, 'r')

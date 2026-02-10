@@ -25,6 +25,19 @@ import timeit
 # Dynamic_Programming(*read_file())
 
 def Final_Output(input_file,):
+    # While loop for valid input for file choice
+    chosen_input_file = ''
+    while chosen_input_file == '':
+        file_choice = input("Would you like to us the small [S], medium [M] or large [L] input file? : ")
+        if file_choice.upper() == 'S':
+            chosen_input_file = "Group_31_ECM1414_Coursework/Input_Files/input_small.txt"
+        elif file_choice.upper() == 'M':
+            chosen_input_file = "Group_31_ECM1414_Coursework/Input_Files/input_medium.txt"
+        elif file_choice.upper() == 'L':
+            chosen_input_file = "Group_31_ECM1414_Coursework/Input_Files/input_large.txt"
+        else :
+            print("Not chosen a valid file to open")
+    
     print(f"""Event Planner results
           
             -Available time:
@@ -39,8 +52,8 @@ def Final_Output(input_file,):
                 ...
           
             Execution Time:
-                {timeit.timeit("Brute_Force(*read_file())",
-                               "from __main__ import Brute_Force,read_file",
+                {timeit.timeit("Brute_Force(*read_file(chosen_input_file))",
+                               "from __main__ import Brute_Force, read_file",
                                number=10)/10} (average from 10 calls)
 
 
