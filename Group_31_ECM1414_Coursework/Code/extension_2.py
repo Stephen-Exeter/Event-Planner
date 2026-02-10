@@ -1,3 +1,7 @@
+
+# Need to install dependencies. Run line below in terminal
+# pip install -r requirements.txt
+
 import timeit
 import matplotlib.pyplot as plt
 from take_input import *
@@ -34,7 +38,7 @@ def comparing_algorithms_line_graph(brute_force_time,
   plt.plot(no_of_events, dynamic_programming_time)
 
   plt.savefig('Group_31_ECM1414_Coursework/graphs/line_graph.png')
-comparing_algorithms_line_graph([1, 4, 8], [2, 5, 7], [1, 2, 3])
+comparing_algorithms_line_graph([1, 14, 23], [2, 5, 7], [1, 2, 3])
 
 # A function which creates a bar chart showing the "speedup factor" (brute force time ÷ dynamic programming time) for each input size.
 
