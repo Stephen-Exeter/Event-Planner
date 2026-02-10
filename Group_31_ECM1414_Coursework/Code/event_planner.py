@@ -24,52 +24,52 @@ import timeit
 #just runnning it here for testing
 # Dynamic_Programming(*read_file())
 
-def Final_Output(input_file,):
-    # While loop for valid input for file choice
-    chosen_input_file = ''
-    while chosen_input_file == '':
-        file_choice = input("Would you like to us the small [S], medium [M] or large [L] input file? : ")
-        if file_choice.upper() == 'S':
-            chosen_input_file = "Group_31_ECM1414_Coursework/Input_Files/input_small.txt"
-        elif file_choice.upper() == 'M':
-            chosen_input_file = "Group_31_ECM1414_Coursework/Input_Files/input_medium.txt"
-        elif file_choice.upper() == 'L':
-            chosen_input_file = "Group_31_ECM1414_Coursework/Input_Files/input_large.txt"
-        else :
-            print("Not chosen a valid file to open")
-    
+def Final_Output(input_file):
+    no_events,hours_max,budget_max,events = read_file(input_file) 
+    event_list_brute_force , enjoyment_brute_force , time_brute_force = Brute_Force(no_events,
+                                                                                    hours_max,
+                                                                                    budget_max,
+                                                                                    events)
+    event_list_dynamic , enjoyment_dynamic = Dynamic_Programming(no_events,
+                                                                hours_max,
+                                                                budget_max,
+                                                                events)
+
+
+
     print(f"""Event Planner results
           
-            -Available time:
-            -Available budget:
+            -Available time: {hours_max}
+            -Available budget: {budget_max}
 
             --Brute Force ALgorithm--
           
             Selected Activities:
-                ...
+                {event_list_brute_force}
           
             Total enjoyment:
-                ...
+                {enjoyment_brute_force}
           
             Execution Time:
-                {timeit.timeit("Brute_Force(*read_file(chosen_input_file))",
-                               "from __main__ import Brute_Force, read_file",
+                {timeit.timeit("Brute_Force(*read_file(input_file))",
+                               "from __main__ import Brute_Force,read_file",
                                number=10)/10} (average from 10 calls)
 
 
             -Dynamic Programming Algorithm-
 
             Selected Activities:
-                ...
+                {event_list_dynamic}
 
             Total Enjoyment:
-                ...
+                {enjoyment_dynamic}
                 
             Execution Time:
-                {timeit.timeit("Dynamic_Programming(*read_file())",
+                {timeit.timeit("Dynamic_Programming(*read_file(input_file))",
                                "from __main__ import Dynamic_Programming,read_file",
                                number=10)/10} (average from 10 calls)
             """)
 if __name__ == "__main__":
-    Final_Output("")
-    
+    Final_Output(r"Group_31_ECM1414_Coursework\Input_Files\input_small.txt")
+    Final_Output(r"Group_31_ECM1414_Coursework\Input_Files\input_medium.txt")
+    Final_Output(r"Group_31_ECM1414_Coursework\Input_Files\input_large.txt")
